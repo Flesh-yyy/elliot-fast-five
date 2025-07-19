@@ -64,11 +64,19 @@
     }
 
     .audio-player {
-      margin-top: 50px;
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    audio::-webkit-media-controls-play-button {
+      background-color: red;
+      border-radius: 50%;
     }
 
     audio {
       width: 340px;
+      background-color: transparent;
     }
 
     @media screen and (max-width: 600px) {
