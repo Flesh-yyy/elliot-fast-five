@@ -18,17 +18,17 @@
     body {
       font-family: 'FlameFont', sans-serif;
       color: #FFCC00;
-      height: 100vh;
       background-image: url('IMG_9997.gif');
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
       background-attachment: fixed;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      padding: 20px;
+      padding-top: 10px;
     }
 
     .content-wrapper {
@@ -37,7 +37,7 @@
       padding: 30px;
       border-radius: 20px;
       max-width: 900px;
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     .logo-image {
@@ -46,7 +46,7 @@
 
     .logo-image img {
       max-width: 100%;
-      width: 500px;
+      width: 700px;
       height: auto;
       display: block;
       margin: 0 auto;
@@ -62,6 +62,7 @@
       font-size: 5em;
       text-shadow: 3px 3px #000;
       margin-bottom: 20px;
+      text-transform: uppercase;
     }
 
     p {
@@ -82,22 +83,24 @@
       justify-content: center;
     }
 
-    audio {
-      width: 240px;
-      background-color: transparent;
+    .custom-audio {
+      background-color: #000;
+      border: 3px solid red;
+      border-radius: 12px;
+      padding: 10px;
+      width: 260px;
     }
 
-    audio::-webkit-media-controls-play-button {
-      background-color: red !important;
-      border-radius: 50%;
+    .custom-audio audio {
+      width: 100%;
     }
 
     @media screen and (max-width: 600px) {
       h2 { font-size: 3em; }
       h3 { font-size: 2.4em; }
       p, .cta { font-size: 1.5em; }
-      audio { width: 200px; }
       .logo-image img { width: 300px; }
+      .custom-audio { width: 200px; }
     }
   </style>
 </head>
@@ -115,10 +118,12 @@
     <p class="cta">Fire up the music and let's ride!</p>
 
     <div class="audio-player">
-      <audio controls autoplay loop>
-        <source src="hotwheels.mp3" type="audio/mpeg" />
-        Your browser doesn’t support the audio element.
-      </audio>
+      <div class="custom-audio">
+        <audio controls autoplay loop>
+          <source src="hotwheels.mp3" type="audio/mpeg" />
+          Your browser doesn’t support the audio element.
+        </audio>
+      </div>
     </div>
   </div>
 </body>
