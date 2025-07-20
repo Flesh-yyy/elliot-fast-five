@@ -70,18 +70,22 @@
     .cta {
       font-size: 3em;
       font-weight: bold;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     .audio-player {
       display: flex;
       justify-content: center;
-      align-items: center;
+      margin-top: 10px;
+    }
+
+    .audio-wrapper {
+      width: 180px;
+      margin: 0 auto;
     }
 
     audio {
-      width: 180px;
-      margin: 0 auto;
+      width: 100%;
       display: block;
     }
 
@@ -90,7 +94,7 @@
       h3 { font-size: 2.4em; }
       p, .cta { font-size: 1.5em; }
       .logo-image img { width: 320px; }
-      audio { width: 160px; }
+      .audio-wrapper { width: 160px; }
     }
   </style>
 </head>
@@ -108,10 +112,12 @@
     <p class="cta">Fire up the music and let's ride!</p>
 
     <div class="audio-player">
-      <audio controls autoplay loop>
-        <source src="hotwheels.mp3" type="audio/mpeg" />
-        Your browser doesn’t support the audio element.
-      </audio>
+      <div class="audio-wrapper">
+        <audio controls autoplay loop>
+          <source src="hotwheels.mp3" type="audio/mpeg" />
+          Your browser doesn’t support the audio element.
+        </audio>
+      </div>
     </div>
   </div>
 </body>
