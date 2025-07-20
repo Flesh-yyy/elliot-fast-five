@@ -9,29 +9,22 @@
       src: url('flamefont.otf') format('opentype');
     }
 
-    * {
+    html, body {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-
-    html, body {
       font-family: 'FlameFont', sans-serif;
       color: #FFCC00;
       background-image: url('IMG_9997.gif');
       background-size: cover;
-      background-position: center center;
+      background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
       min-height: 100vh;
-    }
-
-    body {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      padding-top: 20px;
     }
 
     .content-wrapper {
@@ -40,7 +33,7 @@
       padding: 30px;
       border-radius: 20px;
       max-width: 900px;
-      margin-top: 0;
+      margin-top: 10px;
     }
 
     .logo-image {
@@ -50,7 +43,6 @@
     .logo-image img {
       width: 700px;
       max-width: 100%;
-      height: auto;
       display: block;
       margin: 0 auto;
     }
@@ -58,13 +50,13 @@
     h2 {
       font-size: 6em;
       text-shadow: 3px 3px #000;
-      margin-bottom: 30px;
+      margin: 0 0 30px;
     }
 
     h3 {
       font-size: 5em;
       text-shadow: 3px 3px #000;
-      margin-bottom: 20px;
+      margin: 0 0 20px;
       text-transform: uppercase;
     }
 
@@ -81,22 +73,20 @@
     }
 
     .audio-player {
-      margin-top: 40px;
+      margin-top: 30px;
       display: flex;
       justify-content: center;
     }
 
-    .custom-player {
-      border: 3px solid red;
-      border-radius: 12px;
-      background-color: transparent;
-      padding: 10px;
-      width: 260px;
+    .audio-player audio {
+      width: 240px;
+      border: none;
+      outline: none;
     }
 
-    .custom-player audio {
-      width: 100%;
-      background-color: transparent;
+    audio::-webkit-media-controls-play-button {
+      background-color: red !important;
+      border-radius: 50%;
     }
 
     @media screen and (max-width: 600px) {
@@ -104,7 +94,7 @@
       h3 { font-size: 2.4em; }
       p, .cta { font-size: 1.5em; }
       .logo-image img { width: 320px; }
-      .custom-player { width: 200px; }
+      .audio-player audio { width: 200px; }
     }
   </style>
 </head>
@@ -122,12 +112,10 @@
     <p class="cta">Fire up the music and let's ride!</p>
 
     <div class="audio-player">
-      <div class="custom-player">
-        <audio controls autoplay loop>
-          <source src="hotwheels.mp3" type="audio/mpeg" />
-          Your browser doesn’t support the audio element.
-        </audio>
-      </div>
+      <audio controls autoplay loop>
+        <source src="hotwheels.mp3" type="audio/mpeg" />
+        Your browser doesn’t support the audio element.
+      </audio>
     </div>
   </div>
 </body>
