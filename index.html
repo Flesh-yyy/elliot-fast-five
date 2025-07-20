@@ -21,23 +21,21 @@
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      height: 100vh;
-      width: 100%;
-      overflow-x: hidden;
-      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
     }
 
     .content-wrapper {
-      position: absolute;
-      top: 40px;
-      left: 50%;
-      transform: translateX(-50%);
       text-align: center;
       background-color: rgba(0, 0, 0, 0.15);
-      padding: 30px;
+      padding: 20px 30px;
       border-radius: 20px;
       max-width: 900px;
       width: 90%;
+      margin-top: -40px; /* 💛 lifted everything up slightly */
     }
 
     .logo-image {
@@ -54,27 +52,30 @@
     h2 {
       font-size: 5em;
       text-shadow: 3px 3px #000;
-      margin: 20px 0 10px;
+      margin-top: 10px; /* 🔼 pulled closer to logo */
+      margin-bottom: 5px;
     }
 
     h3 {
       font-size: 4.5em;
       text-shadow: 3px 3px #000;
       text-transform: uppercase;
-      margin: 10px 0 20px;
+      margin-top: 5px;
+      margin-bottom: 10px;
     }
 
     p {
       font-size: 2em;
       text-shadow: 2px 2px #000;
-      margin: 8px 0;
+      margin: 4px 0;
     }
 
     .cta {
       font-size: 2.8em;
       font-weight: bold;
       text-shadow: 2px 2px #000;
-      margin: 30px 0 40px;
+      margin-top: 20px;
+      margin-bottom: 25px; /* gives buffer above music button */
     }
 
     .custom-audio {
@@ -138,7 +139,7 @@
 
     window.addEventListener("load", () => {
       audio.play().catch(() => {
-        // Autoplay might be blocked until interaction
+        // Autoplay may be blocked until user interacts
       });
     });
 
