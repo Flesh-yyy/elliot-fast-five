@@ -34,7 +34,6 @@
       border-radius: 20px;
       max-width: 900px;
       margin-top: -100px;
-      min-height: 1000px; /* This gives the text box extra vertical space */
     }
 
     .logo-image {
@@ -71,18 +70,16 @@
     .cta {
       font-size: 3em;
       font-weight: bold;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     .audio-player {
-      margin-top: 10px;
+      margin-top: 20px;
       text-align: center;
     }
 
     audio {
-  width: 180px;
-  margin-top: -20px;
-  margin-bottom: 40px;
+      width: 180px;
     }
 
     @media screen and (max-width: 600px) {
@@ -106,13 +103,13 @@
     <p>⏰ Time: 1 PM EST</p>
     <p>📍 Location: 26 Derlon Ln., Litchfield</p>
     <p class="cta">Fire up the music and let's ride!</p>
+  </div>
 
-    <div class="audio-player">
-      <audio controls autoplay loop>
-        <source src="hotwheels.mp3" type="audio/mpeg" />
-        Your browser doesn’t support the audio element.
-      </audio>
-    </div>
+  <div class="audio-player">
+    <audio controls autoplay loop>
+      <source src="hotwheels.mp3" type="audio/mpeg" />
+      Your browser doesn’t support the audio element.
+    </audio>
   </div>
 </body>
 </html>
