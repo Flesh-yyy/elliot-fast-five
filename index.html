@@ -15,7 +15,7 @@
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
       font-family: 'FlameFont', sans-serif;
       color: #FFCC00;
       background-image: url('IMG_9997.gif');
@@ -24,11 +24,14 @@
       background-repeat: no-repeat;
       background-attachment: fixed;
       min-height: 100vh;
+    }
+
+    body {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      padding-top: 10px;
+      padding-top: 20px;
     }
 
     .content-wrapper {
@@ -37,7 +40,7 @@
       padding: 30px;
       border-radius: 20px;
       max-width: 900px;
-      margin-top: 10px;
+      margin-top: 0;
     }
 
     .logo-image {
@@ -45,8 +48,8 @@
     }
 
     .logo-image img {
-      max-width: 100%;
       width: 700px;
+      max-width: 100%;
       height: auto;
       display: block;
       margin: 0 auto;
@@ -83,24 +86,25 @@
       justify-content: center;
     }
 
-    .custom-audio {
-      background-color: #000;
+    .custom-player {
       border: 3px solid red;
       border-radius: 12px;
+      background-color: transparent;
       padding: 10px;
       width: 260px;
     }
 
-    .custom-audio audio {
+    .custom-player audio {
       width: 100%;
+      background-color: transparent;
     }
 
     @media screen and (max-width: 600px) {
       h2 { font-size: 3em; }
       h3 { font-size: 2.4em; }
       p, .cta { font-size: 1.5em; }
-      .logo-image img { width: 300px; }
-      .custom-audio { width: 200px; }
+      .logo-image img { width: 320px; }
+      .custom-player { width: 200px; }
     }
   </style>
 </head>
@@ -118,7 +122,7 @@
     <p class="cta">Fire up the music and let's ride!</p>
 
     <div class="audio-player">
-      <div class="custom-audio">
+      <div class="custom-player">
         <audio controls autoplay loop>
           <source src="hotwheels.mp3" type="audio/mpeg" />
           Your browser doesn’t support the audio element.
