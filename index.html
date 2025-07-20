@@ -50,7 +50,6 @@
 
     h2, h3, p, .cta {
       margin-top: -20px;
-      -webkit-text-stroke: 1px white;
     }
 
     h2 {
@@ -133,10 +132,10 @@
     const audio = document.getElementById("audio");
     const playBtn = document.getElementById("playBtn");
 
-    // Autoplay attempt on page load
+    // Try autoplay when page loads
     window.addEventListener("load", () => {
       audio.play().catch(() => {
-        // Autoplay blocked until interaction in some browsers
+        // Autoplay might be blocked until user taps Play
       });
     });
 
