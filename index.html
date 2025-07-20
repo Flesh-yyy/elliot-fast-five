@@ -34,6 +34,8 @@
       border-radius: 20px;
       max-width: 900px;
       margin-top: -100px;
+      display: grid;
+      place-items: center;
     }
 
     .logo-image {
@@ -70,23 +72,17 @@
     .cta {
       font-size: 3em;
       font-weight: bold;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     .audio-player {
-      display: flex;
-      justify-content: center;
       margin-top: 10px;
     }
 
-    .audio-wrapper {
-      width: 180px;
-      margin: 0 auto;
-    }
-
     audio {
-      width: 100%;
+      width: 180px;
       display: block;
+      margin: 0 auto;
     }
 
     @media screen and (max-width: 600px) {
@@ -94,7 +90,7 @@
       h3 { font-size: 2.4em; }
       p, .cta { font-size: 1.5em; }
       .logo-image img { width: 320px; }
-      .audio-wrapper { width: 160px; }
+      audio { width: 160px; }
     }
   </style>
 </head>
@@ -112,12 +108,10 @@
     <p class="cta">Fire up the music and let's ride!</p>
 
     <div class="audio-player">
-      <div class="audio-wrapper">
-        <audio controls autoplay loop>
-          <source src="hotwheels.mp3" type="audio/mpeg" />
-          Your browser doesn’t support the audio element.
-        </audio>
-      </div>
+      <audio controls autoplay loop>
+        <source src="hotwheels.mp3" type="audio/mpeg" />
+        Your browser doesn’t support the audio element.
+      </audio>
     </div>
   </div>
 </body>
