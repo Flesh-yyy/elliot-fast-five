@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>It’s not the same without the flame 🔥</title>
   <style>
     @font-face {
@@ -12,74 +13,81 @@
     html, body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      height: 100%;
+      background: url('IMG_9997.gif') no-repeat center center fixed;
+      background-size: cover;
       font-family: 'FlameFont', sans-serif;
       color: #FFCC00;
-      background-image: url('IMG_9997.gif');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      box-sizing: border-box;
+      padding: 2em;
     }
 
     .content-wrapper {
-      text-align: center;
       background-color: rgba(0, 0, 0, 0.15);
-      padding: 30px;
+      padding: 2em;
       border-radius: 20px;
       max-width: 900px;
-      margin-top: -100px;
-    }
-
-    .logo-image {
-      margin-bottom: 0px;
+      width: 100%;
+      margin-top: -2em;
     }
 
     .logo-image img {
       width: 700px;
       max-width: 100%;
-      display: block;
-      margin: 0 auto;
-    }
-
-    h2, h3, p, .cta {
-      margin-top: -20px;
+      margin-bottom: 1em;
     }
 
     h2 {
       font-size: 6em;
       text-shadow: 3px 3px #000;
+      margin: 0 0 30px;
     }
 
     h3 {
       font-size: 5em;
       text-shadow: 3px 3px #000;
       text-transform: uppercase;
+      margin: 0 0 20px;
     }
 
     p {
       font-size: 2.5em;
       text-shadow: 2px 2px #000;
+      margin: 15px 0;
     }
 
     .cta {
       font-size: 3em;
       font-weight: bold;
-      margin-bottom: 10px;
+      margin-top: 30px;
     }
 
-    .audio-player {
-      margin-top: 20px;
-      text-align: center;
+    .custom-audio {
+      position: fixed;
+      bottom: 2em;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+    }
+
+    #playBtn {
+      background: black;
+      border: 2px solid #FFCC00;
+      color: #FFCC00;
+      font-family: 'FlameFont', sans-serif;
+      font-size: 1em;
+      padding: 0.4em 1em;
+      border-radius: 6px;
+      cursor: pointer;
     }
 
     audio {
-      width: 180px;
+      display: none;
     }
 
     @media screen and (max-width: 600px) {
@@ -87,7 +95,7 @@
       h3 { font-size: 2.4em; }
       p, .cta { font-size: 1.5em; }
       .logo-image img { width: 320px; }
-      audio { width: 160px; }
+      #playBtn { font-size: 0.8em; padding: 0.3em 0.8em; }
     }
   </style>
 </head>
@@ -105,11 +113,27 @@
     <p class="cta">Fire up the music and let's ride!</p>
   </div>
 
-  <div class="audio-player">
-    <audio controls autoplay loop>
+  <div class="custom-audio">
+    <button id="playBtn">Play</button>
+    <audio id="audio">
       <source src="hotwheels.mp3" type="audio/mpeg" />
-      Your browser doesn’t support the audio element.
+      Your browser does not support the audio element.
     </audio>
   </div>
+
+  <script>
+    const audio = document.getElementById("audio");
+    const playBtn = document.getElementById("playBtn");
+
+    playBtn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        playBtn.textContent = "Pause";
+      } else {
+        audio.pause();
+        playBtn.textContent = "Play";
+      }
+    });
+  </script>
 </body>
 </html>
